@@ -55,3 +55,34 @@ class Main {
         }
     }
 }
+
+
+
+
+
+
+
+// Check the number is Armstrong or not
+
+class Main {
+    public static void main(String[] args) {
+        int num = 9;
+        int originalNum = num;
+        int lengthOfNumber = String.valueOf(num).length();
+        int sum = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            int power = 1;
+            // Manual power calculation instead of Math.pow()
+            for (int i = 0; i < lengthOfNumber; i++) {
+                power *= digit;
+            }
+            sum += power;
+            num /= 10;
+        }
+
+        System.out.println(originalNum == sum ? "Armstrong" : "Not Armstrong");
+    }
+}
+
