@@ -1,0 +1,52 @@
+Check if a number is prime.
+
+Brute Force :
+
+class Main {
+    public static void main(String[] args) {
+        int number = 100;
+        int flag = 1;
+        if (number < 2) {
+            System.out.println("not a primer number");
+            return;
+        }
+        for (int i = 2; i <= number; i++) {
+            if (number % i == 0) {
+                flag += 1;
+            }
+        }
+        if (flag == 2) {
+            System.out.println("primer number");
+        } else {
+            System.out.println("not a prime number");
+        }
+        
+        
+    }
+}
+
+
+Optimized Version :
+
+class Main {
+    public static void main(String[] args) {
+        int number = 1;
+        
+         if (number == 2) {
+            System.out.println("primer number");
+            return;
+        }
+        if (number < 2 || number % 2 == 0) {
+            System.out.println("not a primer number");
+            return;
+        }
+       
+        for (int i = 3; i * i <= number; i +=2) {
+            if (number % i == 0) {
+                System.out.println("not a primer number");
+                return;
+            }
+        }
+        System.out.println("primer number");  
+    }
+}
