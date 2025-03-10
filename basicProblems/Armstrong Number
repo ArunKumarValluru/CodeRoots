@@ -1,0 +1,57 @@
+// To find Armstrong Number between two given number. 
+
+My Approoach ::
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter first number ");
+        int firstNumber = in.nextInt();
+        System.out.println("Enter second number ");
+        int secondNumber = in.nextInt();
+        for (int i = firstNumber; i <= secondNumber; i ++) {
+            int length = String.valueOf(i).length();
+            int sum = 0;
+            int value = i;
+            while (value != 0) {
+                 int digit = value % 10;
+                 value = value/10;
+                 sum += Math.pow(digit, length);
+            }
+            if (sum == i) {
+                System.out.println(i);  
+            }
+        }
+        
+    }
+}   
+
+
+Optimized Approach ::
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter first number ");
+        int firstNumber = in.nextInt();
+        System.out.println("Enter second number ");
+        int secondNumber = in.nextInt();
+
+        for (int i = firstNumber; i <= secondNumber; i++) {
+            int value = i;
+            int length = (int) Math.log10(i) + 1; // Efficient digit count
+            int sum = 0;
+
+            // Combined logic for extracting digits and calculating Armstrong sum
+            for (int temp = value; temp != 0; temp /= 10) {
+                sum += Math.pow(temp % 10, length);
+            }
+
+            if (sum == i) {
+                System.out.println(i);
+            }
+        }
+    }
+}
