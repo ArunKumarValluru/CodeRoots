@@ -1,0 +1,14 @@
+import java.util.*;
+ 
+class Main {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("enter the  how many digits you wnat to print :");
+        int num = scanner.nextInt();
+        for(int i = 1; i <= num; i++) {
+            System.out.println(i);
+        }
+    }
+}
+
