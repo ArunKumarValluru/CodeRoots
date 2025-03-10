@@ -1,0 +1,10 @@
+class Main {
+    public static void main(String[] args) {
+        int a = 0;
+        
+        String result = a > 0 
+                        ? "Positive" 
+                        : (a < 0 ? "Negative" : "Zero");
+        System.out.println(result);
+    }
+}
